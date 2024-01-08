@@ -1,0 +1,192 @@
+//
+//  ScannerLidarAppMain.swift
+//  LiDAR_APP
+//
+//  Created by Bartosz Grelewski on 19/11/2023.
+//
+
+import SwiftUI
+
+@main
+struct ScannerLidarAppMain: App {
+    var body: some Scene {
+        WindowGroup {
+            NavigationStack {
+                WelcomeView()
+            }
+        }
+    }
+}
+
+//
+//  AppMain.swift
+//  LiDAR_APP
+//
+//  Created by Bartosz Grelewski on 19/11/2023.
+//
+
+import SwiftUI
+
+
+struct WelcomeView: View {
+    
+    var body: some View {
+        VStack {
+            Image(systemName: "house.fill")
+                .imageScale(.large)
+                .scaleEffect(3)
+                .foregroundColor(.accentColor)
+                .padding(.bottom, 24)
+                .symbolEffect(.pulse)
+            
+            Text("LiDAR Room Scanner")
+                .font(.title)
+                .fontWeight(.bold)
+            Text("Let's start your journey!")
+            
+            Spacer()
+                .frame(height: 50)
+            
+            NavigationLink("Launch Application") {
+                ContentView()
+            }
+            .padding()
+            .background(Color("AccentColor"))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+            .fontWeight(.bold)
+        }
+        
+    }
+}
+
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            WelcomeView()
+        }
+    }
+}
+
+//
+//  MenuView.swift
+//  LiDAR_APP
+//
+//  Created by Bartosz Grelewski on 19/11/2023.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State var selected = false
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 30) {
+                NavigationLink(
+                    destination: {
+                        RoomCaptureScanView()
+                    },
+                    label: {
+                        NavigationOptionView(
+                            title: "Skanuj pomieszczenia 3d",
+                            description: "Zacznij skan pomieszczenia rozpoczynajac od dowolonego wierzcholka sciany."
+                        )
+                    })
+                NavigationLink(
+                    destination: {
+                        LidarDepthView()
+
+                    },
+                    label: {
+                        NavigationOptionView(
+                            title: "Odczyty LiDAR",
+                            description: "Przejdz do widokow bezposrednio z modułu. Zobacz wizualizacje odczytow bezposrednio."
+                        )
+                    })
+                NavigationLink(
+                    destination: {
+                        MyProjectsViewControllerRepresentable()
+                        
+                    },
+                    label: {
+                        NavigationOptionView(
+                            title: "Moje projekty",
+                            description: "Historia skanów 3D za pomocą aplikacji."
+                        )
+                    })
+                Spacer()
+            }
+            .padding(.top, 20)
+            .navigationTitle("Menu aplikacji")
+        }
+        .tint(Color(red: 255 / 255, green: 90 / 255, blue: 0))
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
+    }
+}
+
+//
+//  NavigationTabView.swift
+//  LiDAR_APP
+//
+//  Created by Bartosz Grelewski on 19/11/2023.
+//
+
+import SwiftUI
+
+struct NavigationOptionView: View {
+  @Environment(\.colorScheme)
+  var colorScheme
+
+  let title: String
+  let description: String
+  var body: some View {
+    HStack {
+      VStack(alignment: .leading, spacing: 4) {
+        HStack {
+          Text(title)
+            .font(.headline)
+            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+          Spacer()
+        }
+        Text(description)
+          .font(.subheadline)
+          .multilineTextAlignment(.leading)
+          .foregroundColor(.gray)
+      }
+      Image(systemName: "chevron.right")
+        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+        .padding([.leading, .trailing], 8)
+    }
+    .padding(.leading, 8)
+  }
+}
+
+struct NavigationOptionView_Previews: PreviewProvider {
+  static var previews: some View {
+    Group {
+      NavigationOptionView(
+        title: "Title",
+        description: "A descriptive text of what the view behind the navigation option is about."
+      )
+      .previewLayout(.sizeThatFits)
+      .preferredColorScheme(.light)
+      .previewDisplayName("Light Mode")
+
+      NavigationOptionView(
+        title: "Title",
+        description: "A descriptive text of what the view behind the navigation option is about."
+      )
+      .previewLayout(.sizeThatFits)
+      .preferredColorScheme(.dark)
+      .previewDisplayName("Dark Mode")
+    }
+  }
+}

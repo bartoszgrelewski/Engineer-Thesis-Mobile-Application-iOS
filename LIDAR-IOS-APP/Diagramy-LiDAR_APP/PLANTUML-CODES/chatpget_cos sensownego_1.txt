@@ -1,0 +1,51 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+' Main App Structure
+class ScannerLidarAppMain {
+    +body: some Scene
+}
+
+' Views
+class WelcomeView {
+    +body: some View
+}
+
+class ContentView {
+    -selected: Bool
+    +body: some View
+}
+
+class NavigationOptionView {
+    -colorScheme: Environment<\.colorScheme>
+    -title: String
+    -description: String
+    +body: some View
+}
+
+' ... [Other class definitions continue here in a similar fashion] ...
+
+' Relationships
+ScannerLidarAppMain --> WelcomeView
+ContentView --> RoomCaptureScanView
+ContentView --> NavigationOptionView
+ContentView --> LidarDepthView
+RoomCaptureScanView --> RoomCaptureModel
+RoomCaptureModel ..> RoomCaptureView
+MyProjectsView --> ModelCell
+SelectedProjectView --> SceneKitView
+
+' Additional relationships based on functionality (not explicitly defined in the code but implied)
+WelcomeView --> ContentView
+NavigationOptionView --> RoomCaptureScanView
+NavigationOptionView --> LidarDepthView
+NavigationOptionView --> MyProjectsView
+RoomCaptureScanView ..> FloorPlanScene
+MyProjectsView ..> ScannedModel
+SelectedProjectView ..> RoomCaptureModel
+
+@enduml

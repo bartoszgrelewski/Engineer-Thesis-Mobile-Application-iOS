@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4614B36A2B11580900DB36CB /* MyProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4614B3692B11580900DB36CB /* MyProjectsView.swift */; };
+		4614B36C2B11661E00DB36CB /* SelectedProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4614B36B2B11661E00DB36CB /* SelectedProjectView.swift */; };
+		4614B36E2B1230B000DB36CB /* ScannedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4614B36D2B1230B000DB36CB /* ScannedModel.swift */; };
+		4614B3722B12351900DB36CB /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4614B3712B12351900DB36CB /* ModelCell.swift */; };
+		4614B3742B12380800DB36CB /* MyProjectsViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4614B3732B12380800DB36CB /* MyProjectsViewControllerRepresentable.swift */; };
+		462DFED52B17E3D70060F9F6 /* DepthOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEBE2B17E3D60060F9F6 /* DepthOverlay.swift */; };
+		462DFED62B17E3D70060F9F6 /* MetalTextureViewColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC02B17E3D60060F9F6 /* MetalTextureViewColor.swift */; };
+		462DFED72B17E3D70060F9F6 /* MetalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC12B17E3D60060F9F6 /* MetalEnvironment.swift */; };
+		462DFED82B17E3D70060F9F6 /* MetalTextureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC22B17E3D60060F9F6 /* MetalTextureView.swift */; };
+		462DFED92B17E3D70060F9F6 /* MetalTextureColorThresholdDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC32B17E3D60060F9F6 /* MetalTextureColorThresholdDepth.swift */; };
+		462DFEDA2B17E3D70060F9F6 /* MetalContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC42B17E3D60060F9F6 /* MetalContentView.swift */; };
+		462DFEDB2B17E3D70060F9F6 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC62B17E3D60060F9F6 /* shaders.metal */; };
+		462DFEDC2B17E3D70060F9F6 /* MetalPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC72B17E3D60060F9F6 /* MetalPointCloud.swift */; };
+		462DFEDD2B17E3D70060F9F6 /* MetalTextureViewDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC82B17E3D60060F9F6 /* MetalTextureViewDepth.swift */; };
+		462DFEDE2B17E3D70060F9F6 /* MetalTextureColorZap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFEC92B17E3D60060F9F6 /* MetalTextureColorZap.swift */; };
+		462DFEDF2B17E3D70060F9F6 /* ZoomOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFECA2B17E3D60060F9F6 /* ZoomOnTap.swift */; };
+		462DFEE02B17E3D70060F9F6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFECB2B17E3D60060F9F6 /* View+Extensions.swift */; };
+		462DFEE12B17E3D70060F9F6 /* LidarDepthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFECC2B17E3D60060F9F6 /* LidarDepthView.swift */; };
+		462DFEE22B17E3D70060F9F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462DFECE2B17E3D60060F9F6 /* Preview Assets.xcassets */; };
+		462DFEE32B17E3D70060F9F6 /* CVPixelBuffer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFED02B17E3D60060F9F6 /* CVPixelBuffer+Extension.swift */; };
+		462DFEE42B17E3D70060F9F6 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFED12B17E3D60060F9F6 /* CameraManager.swift */; };
+		462DFEE62B17E3D70060F9F6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFED32B17E3D70060F9F6 /* CameraController.swift */; };
+		4630A47E2B13C74300169042 /* FloorPlanScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A47D2B13C74300169042 /* FloorPlanScene.swift */; };
+		4630A4802B13C78100169042 /* FloorPlanSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A47F2B13C78100169042 /* FloorPlanSurface.swift */; };
+		4630A4822B13C7A700169042 /* FloorPlanObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A4812B13C7A700169042 /* FloorPlanObject.swift */; };
+		4630A4842B13C7BD00169042 /* DrawParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A4832B13C7BD00169042 /* DrawParameters.swift */; };
+		4630A4872B13C7E300169042 /* CGPoint+RotateAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A4862B13C7E300169042 /* CGPoint+RotateAround.swift */; };
+		4630A4892B13C7FF00169042 /* simd_float4x4+EulerAnglesAndPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A4882B13C7FF00169042 /* simd_float4x4+EulerAnglesAndPosition.swift */; };
+		463FF9F72ADAF5E70048EBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463FF9F62ADAF5E70048EBC5 /* Assets.xcassets */; };
+		463FF9FA2ADAF5E70048EBC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463FF9F92ADAF5E70048EBC5 /* Preview Assets.xcassets */; };
+		46424CF52B0AAD5E00329628 /* ScannerLidarAppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CF42B0AAD5E00329628 /* ScannerLidarAppMain.swift */; };
+		46424CF82B0AC66000329628 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CF72B0AC66000329628 /* MenuView.swift */; };
+		46424CFA2B0AC89000329628 /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CF92B0AC89000329628 /* NavigationTabView.swift */; };
+		46424CFC2B0AD66A00329628 /* RoomCaptureScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CFB2B0AD66A00329628 /* RoomCaptureScanView.swift */; };
+		46424CFE2B0AD73700329628 /* RoomCaptureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CFD2B0AD73700329628 /* RoomCaptureModel.swift */; };
+		46424D002B0AD77A00329628 /* RoomCaptureRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46424CFF2B0AD77A00329628 /* RoomCaptureRepresentable.swift */; };
+		46F1418B2B0A4CA60058378C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1418A2B0A4CA60058378C /* WelcomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		463FFA002ADAF5E70048EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463FF9E52ADAF5E50048EBC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 463FF9EC2ADAF5E50048EBC5;
+			remoteInfo = LiDAR_APP;
+		};
+		463FFA0A2ADAF5E70048EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463FF9E52ADAF5E50048EBC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 463FF9EC2ADAF5E50048EBC5;
+			remoteInfo = LiDAR_APP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4614B3672B11468C00DB36CB /* LiDAR-APP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LiDAR-APP-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4614B3692B11580900DB36CB /* MyProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectsView.swift; sourceTree = "<group>"; };
+		4614B36B2B11661E00DB36CB /* SelectedProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProjectView.swift; sourceTree = "<group>"; };
+		4614B36D2B1230B000DB36CB /* ScannedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedModel.swift; sourceTree = "<group>"; };
+		4614B3712B12351900DB36CB /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
+		4614B3732B12380800DB36CB /* MyProjectsViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectsViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		462DFEBE2B17E3D60060F9F6 /* DepthOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthOverlay.swift; sourceTree = "<group>"; };
+		462DFEC02B17E3D60060F9F6 /* MetalTextureViewColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureViewColor.swift; sourceTree = "<group>"; };
+		462DFEC12B17E3D60060F9F6 /* MetalEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalEnvironment.swift; sourceTree = "<group>"; };
+		462DFEC22B17E3D60060F9F6 /* MetalTextureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureView.swift; sourceTree = "<group>"; };
+		462DFEC32B17E3D60060F9F6 /* MetalTextureColorThresholdDepth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureColorThresholdDepth.swift; sourceTree = "<group>"; };
+		462DFEC42B17E3D60060F9F6 /* MetalContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalContentView.swift; sourceTree = "<group>"; };
+		462DFEC62B17E3D60060F9F6 /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
+		462DFEC72B17E3D60060F9F6 /* MetalPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPointCloud.swift; sourceTree = "<group>"; };
+		462DFEC82B17E3D60060F9F6 /* MetalTextureViewDepth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureViewDepth.swift; sourceTree = "<group>"; };
+		462DFEC92B17E3D60060F9F6 /* MetalTextureColorZap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureColorZap.swift; sourceTree = "<group>"; };
+		462DFECA2B17E3D60060F9F6 /* ZoomOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOnTap.swift; sourceTree = "<group>"; };
+		462DFECB2B17E3D60060F9F6 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		462DFECC2B17E3D60060F9F6 /* LidarDepthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LidarDepthView.swift; sourceTree = "<group>"; };
+		462DFECE2B17E3D60060F9F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		462DFED02B17E3D60060F9F6 /* CVPixelBuffer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Extension.swift"; sourceTree = "<group>"; };
+		462DFED12B17E3D60060F9F6 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		462DFED32B17E3D70060F9F6 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		4630A47D2B13C74300169042 /* FloorPlanScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanScene.swift; sourceTree = "<group>"; };
+		4630A47F2B13C78100169042 /* FloorPlanSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanSurface.swift; sourceTree = "<group>"; };
+		4630A4812B13C7A700169042 /* FloorPlanObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanObject.swift; sourceTree = "<group>"; };
+		4630A4832B13C7BD00169042 /* DrawParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawParameters.swift; sourceTree = "<group>"; };
+		4630A4862B13C7E300169042 /* CGPoint+RotateAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+RotateAround.swift"; sourceTree = "<group>"; };
+		4630A4882B13C7FF00169042 /* simd_float4x4+EulerAnglesAndPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "simd_float4x4+EulerAnglesAndPosition.swift"; sourceTree = "<group>"; };
+		463FF9ED2ADAF5E50048EBC5 /* LiDAR_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiDAR_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		463FF9F62ADAF5E70048EBC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		463FF9F92ADAF5E70048EBC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		463FF9FF2ADAF5E70048EBC5 /* LiDAR_APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiDAR_APPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		463FFA092ADAF5E70048EBC5 /* LiDAR_APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiDAR_APPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46424CF42B0AAD5E00329628 /* ScannerLidarAppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerLidarAppMain.swift; sourceTree = "<group>"; };
+		46424CF72B0AC66000329628 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		46424CF92B0AC89000329628 /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
+		46424CFB2B0AD66A00329628 /* RoomCaptureScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureScanView.swift; sourceTree = "<group>"; };
+		46424CFD2B0AD73700329628 /* RoomCaptureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureModel.swift; sourceTree = "<group>"; };
+		46424CFF2B0AD77A00329628 /* RoomCaptureRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureRepresentable.swift; sourceTree = "<group>"; };
+		46F1418A2B0A4CA60058378C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		463FF9EA2ADAF5E50048EBC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FF9FC2ADAF5E70048EBC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FFA062ADAF5E70048EBC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4614B3682B1157DC00DB36CB /* My_Projects */ = {
+			isa = PBXGroup;
+			children = (
+				4614B3692B11580900DB36CB /* MyProjectsView.swift */,
+				4614B36B2B11661E00DB36CB /* SelectedProjectView.swift */,
+				4614B36D2B1230B000DB36CB /* ScannedModel.swift */,
+				4614B3712B12351900DB36CB /* ModelCell.swift */,
+				4614B3732B12380800DB36CB /* MyProjectsViewControllerRepresentable.swift */,
+			);
+			path = My_Projects;
+			sourceTree = "<group>";
+		};
+		462DFEBD2B17E3D60060F9F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				462DFEBE2B17E3D60060F9F6 /* DepthOverlay.swift */,
+				462DFEBF2B17E3D60060F9F6 /* Metal */,
+				462DFECA2B17E3D60060F9F6 /* ZoomOnTap.swift */,
+				462DFECB2B17E3D60060F9F6 /* View+Extensions.swift */,
+				462DFECC2B17E3D60060F9F6 /* LidarDepthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		462DFEBF2B17E3D60060F9F6 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				462DFEC02B17E3D60060F9F6 /* MetalTextureViewColor.swift */,
+				462DFEC12B17E3D60060F9F6 /* MetalEnvironment.swift */,
+				462DFEC22B17E3D60060F9F6 /* MetalTextureView.swift */,
+				462DFEC32B17E3D60060F9F6 /* MetalTextureColorThresholdDepth.swift */,
+				462DFEC42B17E3D60060F9F6 /* MetalContentView.swift */,
+				462DFEC52B17E3D60060F9F6 /* Shaders */,
+				462DFEC72B17E3D60060F9F6 /* MetalPointCloud.swift */,
+				462DFEC82B17E3D60060F9F6 /* MetalTextureViewDepth.swift */,
+				462DFEC92B17E3D60060F9F6 /* MetalTextureColorZap.swift */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		462DFEC52B17E3D60060F9F6 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				462DFEC62B17E3D60060F9F6 /* shaders.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		462DFECD2B17E3D60060F9F6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				462DFECE2B17E3D60060F9F6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		462DFECF2B17E3D60060F9F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				462DFED02B17E3D60060F9F6 /* CVPixelBuffer+Extension.swift */,
+				462DFED12B17E3D60060F9F6 /* CameraManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4630A47C2B13C72A00169042 /* 2D_Plan_Creator */ = {
+			isa = PBXGroup;
+			children = (
+				4630A4852B13C7D100169042 /* Extensions */,
+				4630A47D2B13C74300169042 /* FloorPlanScene.swift */,
+				4630A47F2B13C78100169042 /* FloorPlanSurface.swift */,
+				4630A4812B13C7A700169042 /* FloorPlanObject.swift */,
+				4630A4832B13C7BD00169042 /* DrawParameters.swift */,
+			);
+			path = 2D_Plan_Creator;
+			sourceTree = "<group>";
+		};
+		4630A4852B13C7D100169042 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4630A4862B13C7E300169042 /* CGPoint+RotateAround.swift */,
+				4630A4882B13C7FF00169042 /* simd_float4x4+EulerAnglesAndPosition.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4630A48A2B13D43100169042 /* Scanning_Logic */ = {
+			isa = PBXGroup;
+			children = (
+				46424CFB2B0AD66A00329628 /* RoomCaptureScanView.swift */,
+				46424CFD2B0AD73700329628 /* RoomCaptureModel.swift */,
+				46424CFF2B0AD77A00329628 /* RoomCaptureRepresentable.swift */,
+			);
+			path = Scanning_Logic;
+			sourceTree = "<group>";
+		};
+		463FF9E42ADAF5E50048EBC5 = {
+			isa = PBXGroup;
+			children = (
+				463FF9EF2ADAF5E50048EBC5 /* LiDAR_APP */,
+				463FF9F62ADAF5E70048EBC5 /* Assets.xcassets */,
+				463FF9EE2ADAF5E50048EBC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		463FF9EE2ADAF5E50048EBC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				463FF9ED2ADAF5E50048EBC5 /* LiDAR_APP.app */,
+				463FF9FF2ADAF5E70048EBC5 /* LiDAR_APPTests.xctest */,
+				463FFA092ADAF5E70048EBC5 /* LiDAR_APPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		463FF9EF2ADAF5E50048EBC5 /* LiDAR_APP */ = {
+			isa = PBXGroup;
+			children = (
+				4614B3672B11468C00DB36CB /* LiDAR-APP-Info.plist */,
+				46424CF42B0AAD5E00329628 /* ScannerLidarAppMain.swift */,
+				46F1418A2B0A4CA60058378C /* WelcomeView.swift */,
+				46424CF72B0AC66000329628 /* MenuView.swift */,
+				46424CF92B0AC89000329628 /* NavigationTabView.swift */,
+				46424CF62B0AC62000329628 /* Room_Scan */,
+				46DD34782B17AC5900CA0650 /* LiDAR_Measurements */,
+				4614B3682B1157DC00DB36CB /* My_Projects */,
+				463FF9F82ADAF5E70048EBC5 /* Preview Content */,
+			);
+			path = LiDAR_APP;
+			sourceTree = "<group>";
+		};
+		463FF9F82ADAF5E70048EBC5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				463FF9F92ADAF5E70048EBC5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46424CF62B0AC62000329628 /* Room_Scan */ = {
+			isa = PBXGroup;
+			children = (
+				4630A48A2B13D43100169042 /* Scanning_Logic */,
+				4630A47C2B13C72A00169042 /* 2D_Plan_Creator */,
+			);
+			path = Room_Scan;
+			sourceTree = "<group>";
+		};
+		46DD34782B17AC5900CA0650 /* LiDAR_Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				462DFED32B17E3D70060F9F6 /* CameraController.swift */,
+				462DFECF2B17E3D60060F9F6 /* Model */,
+				462DFECD2B17E3D60060F9F6 /* Preview Content */,
+				462DFEBD2B17E3D60060F9F6 /* Views */,
+			);
+			path = LiDAR_Measurements;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		463FF9EC2ADAF5E50048EBC5 /* LiDAR_APP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 463FFA132ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APP" */;
+			buildPhases = (
+				463FF9E92ADAF5E50048EBC5 /* Sources */,
+				463FF9EA2ADAF5E50048EBC5 /* Frameworks */,
+				463FF9EB2ADAF5E50048EBC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiDAR_APP;
+			packageProductDependencies = (
+			);
+			productName = LiDAR_APP;
+			productReference = 463FF9ED2ADAF5E50048EBC5 /* LiDAR_APP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		463FF9FE2ADAF5E70048EBC5 /* LiDAR_APPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 463FFA162ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APPTests" */;
+			buildPhases = (
+				463FF9FB2ADAF5E70048EBC5 /* Sources */,
+				463FF9FC2ADAF5E70048EBC5 /* Frameworks */,
+				463FF9FD2ADAF5E70048EBC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				463FFA012ADAF5E70048EBC5 /* PBXTargetDependency */,
+			);
+			name = LiDAR_APPTests;
+			productName = LiDAR_APPTests;
+			productReference = 463FF9FF2ADAF5E70048EBC5 /* LiDAR_APPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		463FFA082ADAF5E70048EBC5 /* LiDAR_APPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 463FFA192ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APPUITests" */;
+			buildPhases = (
+				463FFA052ADAF5E70048EBC5 /* Sources */,
+				463FFA062ADAF5E70048EBC5 /* Frameworks */,
+				463FFA072ADAF5E70048EBC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				463FFA0B2ADAF5E70048EBC5 /* PBXTargetDependency */,
+			);
+			name = LiDAR_APPUITests;
+			productName = LiDAR_APPUITests;
+			productReference = 463FFA092ADAF5E70048EBC5 /* LiDAR_APPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		463FF9E52ADAF5E50048EBC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					463FF9EC2ADAF5E50048EBC5 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					463FF9FE2ADAF5E70048EBC5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 463FF9EC2ADAF5E50048EBC5;
+					};
+					463FFA082ADAF5E70048EBC5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 463FF9EC2ADAF5E50048EBC5;
+					};
+				};
+			};
+			buildConfigurationList = 463FF9E82ADAF5E50048EBC5 /* Build configuration list for PBXProject "LiDAR_APP" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 463FF9E42ADAF5E50048EBC5;
+			packageReferences = (
+			);
+			productRefGroup = 463FF9EE2ADAF5E50048EBC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				463FF9EC2ADAF5E50048EBC5 /* LiDAR_APP */,
+				463FF9FE2ADAF5E70048EBC5 /* LiDAR_APPTests */,
+				463FFA082ADAF5E70048EBC5 /* LiDAR_APPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		463FF9EB2ADAF5E50048EBC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462DFEE22B17E3D70060F9F6 /* Preview Assets.xcassets in Resources */,
+				463FF9FA2ADAF5E70048EBC5 /* Preview Assets.xcassets in Resources */,
+				463FF9F72ADAF5E70048EBC5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FF9FD2ADAF5E70048EBC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FFA072ADAF5E70048EBC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		463FF9E92ADAF5E50048EBC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462DFEDD2B17E3D70060F9F6 /* MetalTextureViewDepth.swift in Sources */,
+				462DFED62B17E3D70060F9F6 /* MetalTextureViewColor.swift in Sources */,
+				46424CFA2B0AC89000329628 /* NavigationTabView.swift in Sources */,
+				4630A4842B13C7BD00169042 /* DrawParameters.swift in Sources */,
+				462DFED72B17E3D70060F9F6 /* MetalEnvironment.swift in Sources */,
+				46424CF52B0AAD5E00329628 /* ScannerLidarAppMain.swift in Sources */,
+				4614B3722B12351900DB36CB /* ModelCell.swift in Sources */,
+				46424D002B0AD77A00329628 /* RoomCaptureRepresentable.swift in Sources */,
+				462DFEE62B17E3D70060F9F6 /* CameraController.swift in Sources */,
+				46424CF82B0AC66000329628 /* MenuView.swift in Sources */,
+				462DFEDC2B17E3D70060F9F6 /* MetalPointCloud.swift in Sources */,
+				462DFEE42B17E3D70060F9F6 /* CameraManager.swift in Sources */,
+				4614B3742B12380800DB36CB /* MyProjectsViewControllerRepresentable.swift in Sources */,
+				462DFEE12B17E3D70060F9F6 /* LidarDepthView.swift in Sources */,
+				4630A4892B13C7FF00169042 /* simd_float4x4+EulerAnglesAndPosition.swift in Sources */,
+				4630A4822B13C7A700169042 /* FloorPlanObject.swift in Sources */,
+				462DFEDB2B17E3D70060F9F6 /* shaders.metal in Sources */,
+				4614B36E2B1230B000DB36CB /* ScannedModel.swift in Sources */,
+				462DFED52B17E3D70060F9F6 /* DepthOverlay.swift in Sources */,
+				46424CFE2B0AD73700329628 /* RoomCaptureModel.swift in Sources */,
+				4630A4872B13C7E300169042 /* CGPoint+RotateAround.swift in Sources */,
+				46F1418B2B0A4CA60058378C /* WelcomeView.swift in Sources */,
+				4614B36A2B11580900DB36CB /* MyProjectsView.swift in Sources */,
+				462DFEE32B17E3D70060F9F6 /* CVPixelBuffer+Extension.swift in Sources */,
+				462DFED92B17E3D70060F9F6 /* MetalTextureColorThresholdDepth.swift in Sources */,
+				462DFEDA2B17E3D70060F9F6 /* MetalContentView.swift in Sources */,
+				4630A47E2B13C74300169042 /* FloorPlanScene.swift in Sources */,
+				4630A4802B13C78100169042 /* FloorPlanSurface.swift in Sources */,
+				46424CFC2B0AD66A00329628 /* RoomCaptureScanView.swift in Sources */,
+				462DFED82B17E3D70060F9F6 /* MetalTextureView.swift in Sources */,
+				462DFEDF2B17E3D70060F9F6 /* ZoomOnTap.swift in Sources */,
+				4614B36C2B11661E00DB36CB /* SelectedProjectView.swift in Sources */,
+				462DFEE02B17E3D70060F9F6 /* View+Extensions.swift in Sources */,
+				462DFEDE2B17E3D70060F9F6 /* MetalTextureColorZap.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FF9FB2ADAF5E70048EBC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463FFA052ADAF5E70048EBC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		463FFA012ADAF5E70048EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 463FF9EC2ADAF5E50048EBC5 /* LiDAR_APP */;
+			targetProxy = 463FFA002ADAF5E70048EBC5 /* PBXContainerItemProxy */;
+		};
+		463FFA0B2ADAF5E70048EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 463FF9EC2ADAF5E50048EBC5 /* LiDAR_APP */;
+			targetProxy = 463FFA0A2ADAF5E70048EBC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		463FFA112ADAF5E70048EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		463FFA122ADAF5E70048EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		463FFA142ADAF5E70048EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LiDAR_APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LiDAR-APP-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RoomScanner;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.LiDARApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		463FFA152ADAF5E70048EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LiDAR_APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LiDAR-APP-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RoomScanner;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.LiDARApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		463FFA172ADAF5E70048EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.APPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiDAR_APP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LiDAR_APP";
+			};
+			name = Debug;
+		};
+		463FFA182ADAF5E70048EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.APPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiDAR_APP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LiDAR_APP";
+			};
+			name = Release;
+		};
+		463FFA1A2ADAF5E70048EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.APPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiDAR_APP;
+			};
+			name = Debug;
+		};
+		463FFA1B2ADAF5E70048EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526R8P9AT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grelewski.app.APPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiDAR_APP;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		463FF9E82ADAF5E50048EBC5 /* Build configuration list for PBXProject "LiDAR_APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				463FFA112ADAF5E70048EBC5 /* Debug */,
+				463FFA122ADAF5E70048EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		463FFA132ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				463FFA142ADAF5E70048EBC5 /* Debug */,
+				463FFA152ADAF5E70048EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		463FFA162ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				463FFA172ADAF5E70048EBC5 /* Debug */,
+				463FFA182ADAF5E70048EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		463FFA192ADAF5E70048EBC5 /* Build configuration list for PBXNativeTarget "LiDAR_APPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				463FFA1A2ADAF5E70048EBC5 /* Debug */,
+				463FFA1B2ADAF5E70048EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 463FF9E52ADAF5E50048EBC5 /* Project object */;
+}

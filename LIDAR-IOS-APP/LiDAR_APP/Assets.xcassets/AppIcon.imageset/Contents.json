@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "interior.svg",
+      "idiom" : "iphone"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

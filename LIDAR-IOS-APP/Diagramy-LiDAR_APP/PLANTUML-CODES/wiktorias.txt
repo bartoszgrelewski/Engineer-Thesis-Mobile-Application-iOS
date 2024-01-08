@@ -1,0 +1,108 @@
+@startuml
+ 
+interface TextSendListener << Interface >> {
+  + onTextSend(text: String)
+}
+ 
+ 
+class MainActivity << Activity >>{
+  - adapter: MyPagerAdapter
+  + onTextSend(text: String)
+  + onCreate(savedInstanceState: Bundle)
+}
+ 
+ 
+ 
+ 
+class MyPagerAdapter {
+  - fragmentManager: FragmentManager
+  + getItem(position: int): Fragment
+  + getCount(): int
+}
+ 
+ 
+class FragmentDisplayText <<Fragment>> {
+    - textSendListener: TextSendListener
+    + onAttach(context: Context)
+    + onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View
+    + onResume()
+  }
+ 
+class FragmentMain << Fragment >> {
+  - handler: Handler
+  - mmSocket: BluetoothSocket
+  - connectedThread: ConnectedThread
+  - createConnectThread: CreateConnectThread
+  - deviceName: String
+  - deviceAddress: String
+  ...
+ 
+  + onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+  + reconnectBluetooth()
+  + sendTextViaBluetooth(text: String)
+  + showAuthorInfoPopup()
+}
+  
+  class ConnectedThread <<Thread>>{
+    - mmSocket: BluetoothSocket
+    - mmInStream: InputStream
+    - mmOutStream: OutputStream
+    + run()
+    + write(input: String)
+    + cancel()
+  }
+ 
+ 
+class CreateConnectThread <<Thread>>{
+  - activity: Activity
+  - context: Context
+  - bluetoothAdapter: BluetoothAdapter
+  - address: String
+  - mmSocket: BluetoothSocket
+  + run()
+  + cancel()
+}
+class DeviceInfoModel {
+  + deviceName: String
+  + deviceHardwareAddress: String
+  + DeviceInfoModel(deviceName: String, deviceHardwareAddress: String)
+}
+ 
+class DeviceListAdapter {
+  - deviceList: List<DeviceInfoModel>
+ 
+  + onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
+  + onBindViewHolder(holder: ViewHolder, position: Int)
+  + getItemCount(): Int
+}
+ 
+class SelectDeviceActivity <<Activity>> {
+  + onCreate(savedInstanceState: Bundle)
+  ...
+}
+ 
+class ViewHolder {
+  + textName: TextView
+  + textAddress: TextView
+  + imageViewIcon: ImageView
+  + linearLayout: LinearLayout
+}
+class LauncherActivity <<Activity>>{
+  + onCreate(savedInstanceState: Bundle)
+}
+MainActivity ..|> TextSendListener
+FragmentMain --[hidden]-> ConnectedThread
+ConnectedThread +-- FragmentMain
+CreateConnectThread +-- FragmentMain
+DeviceListAdapter "1" -- "*" DeviceInfoModel
+SelectDeviceActivity *-- DeviceListAdapter
+FragmentMain --> SelectDeviceActivity
+DeviceListAdapter "1" -- "*" ViewHolder
+DeviceListAdapter --+ ViewHolder
+DeviceInfoModel "1" -- "1" ViewHolder
+MyPagerAdapter "1" -- "1" FragmentMain
+MyPagerAdapter "1" -- "1" FragmentDisplayText
+MainActivity *-- MyPagerAdapter
+LauncherActivity --> MainActivity
+ 
+@enduml

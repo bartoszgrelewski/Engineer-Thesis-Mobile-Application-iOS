@@ -1,0 +1,118 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+class "ScannerLidarAppMain" as ScannerLidarAppMain << (S, SkyBlue) struct >> {
+  ~body: some Scene
+}
+
+class "SelectedProjectView" as SelectedProjectView << (S, SkyBlue) struct >> {
+  -model
+  -selectedButton: Int?
+  -isShowingFloorPlan
+  ~filePath: String
+  ~body: some View
+}
+
+class "SceneKitView" as SceneKitView << (S, SkyBlue) struct >> {
+  ~path: String
+  ~configureUI: Int
+  ~capturedRoom: CapturedRoom?
+  ~type: SCNLight.LightType!
+  ~makeUIView(context:)
+  ~updateUIView(:context:)
+}
+
+class "MyProjectsViewControllerRepresentable" as MyProjectsViewControllerRepresentable << (S, SkyBlue) struct >> {
+  ~makeUIViewController(context:)
+  ~updateUIViewController(:context:)
+}
+
+class "ScannedModel" as ScannedModel << (S, SkyBlue) struct >> {
+  ~filePath: String
+  ~creationDate: String
+}
+
+class "MyProjectsView" as MyProjectsView << (C, DarkSeaGreen) >> {
+  ~scannedModels
+  ~dates
+  ~viewWillAppear(:)
+  ~viewDidLoad()
+  ~getFilePaths()
+  ~tableView(:numberOfRowsInSection:)
+  ~tableView(:cellForRowAt:)
+  ~tableView(:heightForRowAt:)
+  ~tableView(:didSelectRowAt:)
+}
+
+class "LidarDepthView" as LidarDepthView << (S, SkyBlue) struct >> {
+  -manager
+  -maxDepth
+  -minDepth
+  -scaleMovement
+  ~maxRangeDepth
+  ~minRangeDepth
+  ~body: some View
+}
+
+class "RoomCaptureScanView" as RoomCaptureScanView << (S, SkyBlue) struct >> {
+  -model
+  -isScanning
+  -isShowingFloorPlan
+  ~body: some View
+  -startSession()
+  -stopSession()
+  -exportFun()
+}
+
+class "RoomCaptureModel" as RoomCaptureModel << (C, DarkSeaGreen) >> {
+  ~{static} shared
+  ~roomCaptureView: RoomCaptureView
+  -captureSessionConfig: RoomCaptureSession.Configuration
+  -roomBuilder: RoomBuilder
+  ~finalRoom: CapturedRoom?
+  ~encode(with:)
+  ~init(coder:)
+  -init()
+  ~startSession()
+  ~stopSession()
+  -captureSession(:didEndWith:error:)
+}
+
+class "WelcomeView" as WelcomeView << (S, SkyBlue) struct >> {
+  ~body: some View
+}
+
+class "NavigationOptionView" as NavigationOptionView << (S, SkyBlue) struct >> {
+  ~colorScheme
+  ~title: String
+  ~description: String
+  ~body: some View
+}
+
+class "ContentView" as ContentView << (S, SkyBlue) struct >> {
+  ~selected
+  ~body: some View
+}
+
+App <|-- ScannerLidarAppMain : inherits
+UIViewControllerRepresentable <|-- MyProjectsViewControllerRepresentable : inherits
+
+ScannerLidarAppMain --> WelcomeView
+WelcomeView --> ContentView
+NavigationOptionView --> ContentView
+ContentView --> RoomCaptureScanView
+ContentView --> LidarDepthView
+ContentView --> MyProjectsViewControllerRepresentable
+MyProjectsViewControllerRepresentable --> MyProjectsView
+MyProjectsView --> SelectedProjectView
+RoomCaptureScanView --> RoomCaptureModel
+MyProjectsView --> ScannedModel
+SelectedProjectView --> SceneKitView
+RoomCaptureModel --> SelectedProjectView
+LidarDepthView --> CameraManager
+
+@enduml

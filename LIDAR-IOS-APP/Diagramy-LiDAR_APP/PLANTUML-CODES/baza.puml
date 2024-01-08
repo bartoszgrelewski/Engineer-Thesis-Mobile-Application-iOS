@@ -1,0 +1,189 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+class "ScannerLidarAppMain" as ScannerLidarAppMain << (S, SkyBlue) struct >> {
+~body : some Scene
+}
+class "SelectedProjectView" as SelectedProjectView << (S, SkyBlue) struct >> {
+-model
+-selectedButton : Int?
+-isShowingFloorPlan
+~filePath : String
+~body : some View
+}
+class "CustomButtonStyle" as CustomButtonStyle << (S, SkyBlue) struct >> {
+~isSelected : Bool
+~makeBody(configuration:)
+}
+class "SceneKitView" as SceneKitView << (S, SkyBlue) struct >> {
+~path : String
+~configureUI : Int
+~capturedRoom : CapturedRoom?
+~type : SCNLight.LightType!
+~makeUIView(context:)
+~updateUIView(:context:)
+}
+class "MyProjectsViewControllerRepresentable" as MyProjectsViewControllerRepresentable << (S, SkyBlue) struct >> {
+~makeUIViewController(context:)
+~updateUIViewController(:context:)
+}
+class "ScannedModel" as ScannedModel << (S, SkyBlue) struct >> {
+~filePath : String
+~creationDate : String
+}
+class "MyProjectsView" as MyProjectsView << (C, DarkSeaGreen) >> {
+~scannedModels
+~dates
+~viewWillAppear(:)
+~viewDidLoad()
+~getFilePaths()
+~tableView(:numberOfRowsInSection:)
+~tableView(:cellForRowAt:)
+~tableView(:heightForRowAt:)
+~tableView(:didSelectRowAt:)
+}
+class "ModelCell" as ModelCell << (C, DarkSeaGreen) >> {
+~modelPreviewView : SCNView!
+~creationDate : UILabel!
+~modelName : UILabel!
+~init(style:reuseIdentifier:)
+~init(coder:)
+~layoutSubviews()
+~setSelected(:animated:)
+~updateCell(path:modelName:creationDate:)
+}
+class "LidarDepthView" as LidarDepthView << (S, SkyBlue) struct >> {
+-manager
+-maxDepth
+-minDepth
+-scaleMovement
+~maxRangeDepth
+~minRangeDepth
+~body : some View
+}
+class "SliderDepthBoundaryView" as SliderDepthBoundaryView << (S, SkyBlue) struct >> {
+~val : Float
+~label : String
+~minVal : Float
+~maxVal : Float
+~stepsCount
+~body : some View
+}
+class "FloorPlanScene" as FloorPlanScene << (C, DarkSeaGreen) >> {
+-surfaces : [CapturedRoom.Surface]
+-objects : [CapturedRoom.Object]
+~init(capturedRoom:)
+~init(coder:)
+~didMove(to:)
+-drawSurfaces()
+-drawObjects()
+-addCamera()
+-previousCameraScale
+-previousCameraPosition
+-panGestureAction(:)
+-pinchGestureAction(:)
+}
+class "FloorPlanObject" as FloorPlanObject << (C, DarkSeaGreen) >> {
+-capturedObject : CapturedRoom.Object
+~init(capturedObject:)
+~init(coder:)
+-drawObject()
+}
+class "FloorPlanSurface" as FloorPlanSurface << (C, DarkSeaGreen) >> {
+-capturedSurface : CapturedRoom.Surface
+-halfLength : CGFloat
+-pointA : CGPoint
+-pointB : CGPoint
+-pointC : CGPoint
+~init(capturedSurface:)
+~init(coder:)
+-drawDoor()
+-drawOpening()
+-drawWall()
+-drawWindow()
+-createPath(from:to:)
+-createShapeNode(from:)
+}
+class "RoomCaptureScanView" as RoomCaptureScanView << (S, SkyBlue) struct >> {
+-model
+-isScanning
+-isShowingFloorPlan
+~body : some View
+-startSession()
+-stopSession()
+-exportFun()
+}
+class "RoomCaptureModel" as RoomCaptureModel << (C, DarkSeaGreen) >> {
+~{static} shared
+~roomCaptureView : RoomCaptureView
+-captureSessionConfig : RoomCaptureSession.Configuration
+-roomBuilder : RoomBuilder
+~finalRoom : CapturedRoom?
+~encode(with:)
+~init(coder:)
+-init()
+~startSession()
+~stopSession()
+~captureSession(:didEndWith:error:)
+}
+class "RoomCaptureRepresentable" as RoomCaptureRepresentable << (S, SkyBlue) struct >> {
+~makeUIView(context:)
+~updateUIView(:context:)
+}
+class "WelcomeView" as WelcomeView << (S, SkyBlue) struct >> {
+~body : some View
+}
+class "NavigationOptionView" as NavigationOptionView << (S, SkyBlue) struct >> {
+~colorScheme
+~title : String
+~description : String
+~body : some View
+}
+class "ContentView" as ContentView << (S, SkyBlue) struct >> {
+~selected
+~body : some View
+}
+class "simd_float4x4" as simd_float4x4 << (X, Orchid) extension >> {
+~eulerAngles : simd_float3
+~position : simd_float3
+}
+class "CGPoint" as CGPoint << (X, Orchid) extension >> {
+~rotateAround(point:by:)
+}
+App <|-- ScannerLidarAppMain : inherits
+View <|-- SelectedProjectView : inherits
+ButtonStyle <|-- CustomButtonStyle : inherits
+UIViewRepresentable <|-- SceneKitView : inherits
+UIViewControllerRepresentable <|-- MyProjectsViewControllerRepresentable : inherits
+UITableViewController <|-- MyProjectsView : inherits
+UITableViewCell <|-- ModelCell : inherits
+View <|-- LidarDepthView : inherits
+View <|-- SliderDepthBoundaryView : inherits
+SKScene <|-- FloorPlanScene : inherits
+SKNode <|-- FloorPlanObject : inherits
+SKNode <|-- FloorPlanSurface : inherits
+View <|-- RoomCaptureScanView : inherits
+RoomCaptureSessionDelegate <|-- RoomCaptureModel : inherits
+UIViewRepresentable <|-- RoomCaptureRepresentable : inherits
+View <|-- WelcomeView : inherits
+View <|-- NavigationOptionView : inherits
+View <|-- ContentView : inherits
+ScannerLidarAppMain --> WelcomeView
+WelcomeView --> ContentView
+ContentView --> NavigationOptionView
+ContentView --> RoomCaptureScanView
+ContentView --> LidarDepthView
+RoomCaptureScanView --> RoomCaptureModel
+RoomCaptureModel --> RoomCaptureView
+RoomCaptureView --> RoomCaptureSession
+RoomCaptureSession --> CapturedRoom
+MyProjectsView --> ModelCell
+MyProjectsView --> ScannedModel
+SelectedProjectView --> SceneKitView
+SelectedProjectView --> RoomCaptureModel
+LidarDepthView --> CameraManager
+@enduml

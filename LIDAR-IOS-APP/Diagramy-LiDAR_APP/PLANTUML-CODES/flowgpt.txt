@@ -1,0 +1,150 @@
+@startuml
+class ScannerLidarAppMain {
++body: some Scene
+}
+
+class WelcomeView {
++body: some View
+}
+
+class ContentView {
+-selected: Bool
++body: some View
+}
+
+class NavigationOptionView {
+-colorScheme: ColorScheme
+-title: String
+-description: String
++body: some View
+}
+
+class RoomCaptureScanView {
+-model: RoomCaptureModel
+-isScanning: Bool
+-isShowingFloorPlan: Bool
++body: some View
++startSession(): Void
++stopSession(): Void
++exportFun(): Void
+}
+
+class RoomCaptureModel {
+-roomCaptureView: RoomCaptureView
+-captureSessionConfig: RoomCaptureSession.Configuration
+-roomBuilder: RoomBuilder
+-finalRoom: CapturedRoom?
++startSession(): Void
++stopSession(): Void
++captureSession(session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: Error?): Void
++init(): Void
+}
+
+class RoomCaptureView {
+-captureSession: RoomCaptureSession
++run(configuration: RoomCaptureSession.Configuration): Void
++stop(): Void
+}
+
+class RoomCaptureSession {
+-delegate: RoomCaptureSessionDelegate
+-configuration: RoomCaptureSession.Configuration
+}
+
+class CapturedRoom {
+-surfaces: [Surface]
+-objects: [Object]
+}
+
+class FloorPlanScene {
+-surfaces: [CapturedRoom.Surface]
+-objects: [CapturedRoom.Object]
++init(capturedRoom: CapturedRoom): Void
++drawSurfaces(): Void
++drawObjects(): Void
+}
+
+class FloorPlanSurface {
+-capturedSurface: CapturedRoom.Surface
++init(capturedSurface: CapturedRoom.Surface): Void
++drawDoor(): Void
++drawOpening(): Void
++drawWall(): Void
++drawWindow(): Void
+}
+
+class FloorPlanObject {
+-capturedObject: CapturedRoom.Object
++init(capturedObject: CapturedRoom.Object): Void
++drawObject(): Void
+}
+
+class MyProjectsView {
+-scannedModels: [ScannedModel]
+-dates: [String]
++viewWillAppear(animated: Bool): Void
++viewDidLoad(): Void
++getFilePaths(): Void
++numberOfRowsInSection(section: Int): Int
++cellForRowAt(indexPath: IndexPath): UITableViewCell
+}
+
+class ScannedModel {
+-filePath: String
+-creationDate: String
+}
+
+class ModelCell {
+-modelPreviewView: SCNView
+-creationDate: UILabel
+-modelName: UILabel
++updateCell(path: String, modelName: String, creationDate: String): Void
+}
+
+class SelectedProjectView {
+-model: RoomCaptureModel
+-selectedButton: Int?
+-isShowingFloorPlan: Bool
+-filePath: String
++body: some View
+}
+
+class SceneKitView {
+-path: String
+-configureUI: Int
+-capturedRoom: CapturedRoom?
+-type: SCNLight.LightType
++makeUIView(context: Context): SCNView
++updateUIView(uiView: SCNView, context: Context): Void
+}
+
+class LidarDepthView {
+-manager: CameraManager
+-maxDepth: Float
+-minDepth: Float
+-scaleMovement: Float
++body: some View
+}
+
+class CameraManager {
+-capturedData: CapturedData
+-isFilteringDepth: Bool
++startPhotoCapture(): Void
++resumeStream(): Void
+}
+
+ScannerLidarAppMain --> WelcomeView
+WelcomeView --> ContentView
+ContentView --> NavigationOptionView
+ContentView --> RoomCaptureScanView
+ContentView --> LidarDepthView
+RoomCaptureScanView --> RoomCaptureModel
+RoomCaptureModel --> RoomCaptureView
+RoomCaptureView --> RoomCaptureSession
+RoomCaptureSession --> CapturedRoom
+MyProjectsView --> ModelCell
+MyProjectsView --> ScannedModel
+SelectedProjectView --> SceneKitView
+SelectedProjectView --> RoomCaptureModel
+LidarDepthView --> CameraManager
+@enduml
